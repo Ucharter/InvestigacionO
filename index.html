@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es" class="html_stretched responsive av-preloader-disabled  html_header_top html_logo_left html_bottom_nav_header html_menu_left html_slim html_header_sticky_disabled html_header_shrinking_disabled html_header_topbar_active html_mobile_menu_tablet html_header_searchicon html_content_align_center html_header_unstick_top html_header_stretch_disabled html_minimal_header html_minimal_header_shadow html_elegant-blog html_av-submenu-hidden html_av-submenu-display-click html_av-overlay-side html_av-overlay-side-classic html_av-submenu-noclone html_entry_id_11664 av-cookies-no-cookie-consent av-default-lightbox av-no-preview html_text_menu_active av-mobile-menu-switch-default">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Método Simplex</title>
+<link rel="stylesheet" type="text/css" href="Style.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C600%2C%7CInknut%20Antiqua%3Anormal%2C%7COpen%20Sans%3Anormal%2C%7CRaleway%3A500%2C%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C600%2C%7CInknut%20Antiqua%3Anormal%2C%7COpen%20Sans%3Anormal%2C%7CRaleway%3A500%2C%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A500%2C600%2C%7CInknut%20Antiqua%3Anormal%2C%7COpen%20Sans%3Anormal%2C%7CRaleway%3A500%2C%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%20Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap" /></noscript>
+<meta property="og:locale" content="es_ES" />
+
+
+<script>document.addEventListener('DOMContentLoaded', function(event) {  if( typeof cpLoadCSS !== 'undefined' ) { cpLoadCSS('https://www.plandemejora.com/wp-content/plugins/convertpro/assets/modules/css/cp-popup.min.css?ver=1.7.4', 0, 'all'); } }); </script>
+<link data-minify="1" rel='preload' href='https://www.plandemejora.com/wp-content/cache/min/1/wp-content/uploads/dynamic_avia/avia-merged-styles-7fce4408f4fea08e3b7a76df818b312e---628530fac1554.css?ver=1652895995' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+</style>
+</head>
+
+<body data-cmplz=1 id="top" class="post-template-default single single-post postid-11664 single-format-standard stretched rtl_columns av-curtain-numeric open_sans  avia-responsive-images-support elementor-default elementor-kit-8014 av-recaptcha-enabled av-google-badge-hide" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+
+<div id='main' class='all_colors' data-scroll-offset='0'>
+
+<br />
+<h2 style="text-align: center;text-transform: none;letter-spacing: 0px;padding: 20px;margin-bottom: 30px;margin-top: 10px;background-color: #F2F4F7;color: #000!important;border-radius: 10px;">Método Simplex</h2>
+<div class="contenedor-calculadoras">
+<form id="datos-problema" class="form-dos-fases" method="post" name="form-dos-fases">
+<p><label class="texto-simplex" for="cantidad-variables">Cantidad de Variables:</label><br> <input id="cantidad-variables" class="cantidad-simplex" max="20" min="2" name="cantidad-variables" required="required" type="number" placeholder="Max. 20" aria-required="true"></p>
+<p><label class="texto-simplex" for="cantidad-restricciones">Cantidad de
+Restricciones:</label><br> <input id="cantidad-restricciones" class="cantidad-simplex" max="50" min="1" name="cantidad-restricciones" placeholder="Max. 50" required="required" type="number" aria-required="true"></p>
+<button style="margin-top:10px;" id="boton-dos-fases" class="boton-dos-fases" type="submit">Generar Modelo</button>
+<button style="margin-top:10px;" type="reset" class="boton-dos-fases" id="reset-boton-principal">Limpiar</button>
+</form>
+</div>
+<div class="contenedor-coeficientes">
+<form id="formulario-problema" class="formulario-problema" method="post" name="f1"></form>
+</div>
+<div id="ecuaciones" class="ecuaciones"></div>
+<div id="resultados-simplex" class="resultados-simplex" style="margin-top: 20px;"></div></p>
+</div>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.plandemejora.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/migrate.min.js?ver=6.1.6.1' id='cmplz-migrate-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://www.plandemejora.com/wp-content/cache/min/1/wp-content/plugins/wp-shortcodes/src/js/fraction.js?ver=1651851724' id='fracciones-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://www.plandemejora.com/wp-content/cache/min/1/wp-content/plugins/wp-shortcodes/src/js/code.js?ver=1651851718' id='encriptador-js' defer></script>
+<script type='text/javascript' src='code.js' id='simplexfree-js' defer></script>
+    
+</script>
+</body>
+</html>
